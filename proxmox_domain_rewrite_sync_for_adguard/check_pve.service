@@ -1,0 +1,14 @@
+[Unit]
+Description=PVE Master domain keeper
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/pve_domain_keeper
+User=ubuntu
+Group=ubuntu
+ExecStart=/srv/pve_domain_keeper/.venv/bin/python main.py
+
+[Install]
+WantedBy=multi-user.target
+
